@@ -1,0 +1,180 @@
+<style>
+    /* set the css to fit the background video in the Window */
+        .fullscreen-bg {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                overflow: hidden;
+                z-index: -100;
+        }
+  
+        .fullscreen-bg__video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+        }
+  
+  @media (min-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      height: 300%;
+      top: -100%;
+    }
+  }
+  
+  @media (max-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      width: 300%;
+      left: -100%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .fullscreen-bg {
+     
+    }
+  
+    .fullscreen-bg__video {
+      display: none;
+    }
+  }
+
+        .headerFont{
+                 font-family: "Lucida Sans Unicode";
+                font-size: 20px;
+                text-align: center;
+        }
+</style>
+<div class="fullscreen-bg">
+    <video loop muted autoplay  class="fullscreen-bg__video">
+        <source src="spaceTravel.mp4" type="video/mp4">
+    </video>
+</div>
+<div>
+    
+    
+    <h2 style="text-align:center;margin-top:85px;font-family: Lucida Sans Unicode;font-size: 30px;color:white">Select the planets and vechiles</h2>
+    <br>
+    <div class="col-sm-2" style="margin-left:20%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            Destination1 : 
+        </label>
+        <br>
+        <form>
+                <select ng-model = "selectedPlanetName1" ng-click="disablePlanet[selectedPlanetName1]=true">
+                        <option></option>
+                        <option ng-repeat = "name in planetsName" ng-disabled="disablePlanet[name]" value="{{name}}"> {{name}} </option>
+                </select>
+        </form>
+        <br>
+        <hr />
+        <br>
+        <div >
+            <label style="font-family: Lucida Sans Unicode;font-size: 20px;margin-left:1%;color:white">
+                Vechile1 : 
+            </label>
+            <br>
+            <form>
+                    <select ng-model = "selectedVechileName1" ng-click="disabled[selectedVechileName1]=true">
+                            <option></option>
+                            <option ng-repeat = "name in vechileName track by $index" ng-init="selectedVechileName1 = $index" ng-disabled="disabled[selectedVechileName1]" value="{{selectedVechileName1}}"> {{name}} </option>
+                    </select>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-2" style="display:inline-block;">
+            <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+                Destination2 : 
+            </label>
+            <br>
+            <form>
+                    <select ng-model = "selectedPlanetName2" ng-click="disablePlanet[selectedPlanetName2]=true">
+                            <option></option>
+                            <option ng-repeat = "name in planetsName" ng-disabled="disablePlanet[name]" value="{{name}}"> {{name}} </option>
+                    </select>
+            </form>
+            <br>
+            <hr />
+            <br>
+            <div >
+                <label style="font-family: Lucida Sans Unicode;font-size: 20px;margin-left:1%;color:white">
+                    Vechile2 : 
+                </label>
+                <br>
+                <form>
+                        <select ng-model = "selectedVechileName2" ng-click="disabled[selectedVechileName2]=true">
+                                <option></option>
+                                <option ng-repeat = "name in vechileName track by $index" ng-init="selectedVechileName2 = $index" ng-disabled="disabled[selectedVechileName2]" value="{{selectedVechileName2}}"> {{name}} </option>
+                        </select>
+                </form>
+            </div>
+    </div>
+    <div class="col-sm-2" style="display:inline-block;">
+            <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+                Destination3 : 
+            </label>
+            <br>
+            <form>
+                    <select ng-model = "selectedPlanetName3" ng-click="disablePlanet[selectedPlanetName3]=true">
+                            <option></option>
+                            <option ng-repeat = "name in planetsName" ng-disabled="disablePlanet[name]" value="{{name}}"> {{name}} </option>
+                    </select>
+            </form>
+            <br>
+            <hr />
+            <br>
+            <div >
+                <label style="font-family: Lucida Sans Unicode;font-size: 20px;margin-left:1%;color:white">
+                    Vechile3 : 
+                </label>
+                <br>
+                <form>
+                        <select ng-model = "selectedVechileName3" ng-click="disabled[selectedVechileName3]=true">
+                                <option></option>
+                                <option ng-repeat = "name in vechileName track by $index" ng-init="selectedVechileName3 = $index" ng-disabled="disabled[selectedVechileName3]" value="{{selectedVechileName3}}"> {{name}} </option>
+                        </select>
+                </form>
+            </div>
+    </div>
+    <div class="col-sm-2" style="display:inline-block;">
+            <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+                Destination4 : 
+            </label>
+            <br>
+            <form>
+                    <select ng-model = "selectedPlanetName4" ng-click="disablePlanet[selectedPlanetName4]=true">
+                            <option></option>
+                            <option ng-repeat = "name in planetsName" ng-disabled="disablePlanet[name]" value="{{name}}"> {{name}} </option>
+                    </select>
+            </form>
+            <br>
+            <hr />
+            <br>
+            <div >
+                <label style="font-family: Lucida Sans Unicode;font-size: 20px;margin-left:1%;color:white">
+                    Vechile4 : 
+                </label>
+                <br>
+                <form>
+                        <select ng-model = "selectedVechileName4" ng-click="disabled[selectedVechileName4]=true">
+                                <option></option>
+                                <option ng-repeat = "name in vechileName track by $index" ng-init="selectedVechileName4 = $index" ng-disabled="disabled[selectedVechileName4]" value="{{selectedVechileName4}}"> {{name}} </option>
+                        </select>
+                </form>
+            </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button class="btn btn-primary" style="margin-top:2%;margin-left:47%;font-family: Lucida Sans Unicode;color:white" ng-click="computeTime()">Ok</button>
+    <br>
+    <h2 style="text-align:center;font-family: Lucida Sans Unicode;font-size: 30px;color:white">Time Taken:{{time}}</h2>
+    <br>
+    <button class="btn btn-primary" style="margin-left:45%;font-family: Lucida Sans Unicode;color:white" ng-click="findFalcone()">Find Falcone</button>
+</div>

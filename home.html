@@ -1,0 +1,156 @@
+<style>
+    /* set the css to fit the background video in the Window */
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+  }
+  
+  .fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  @media (min-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      height: 300%;
+      top: -100%;
+    }
+  }
+  
+  @media (max-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      width: 300%;
+      left: -100%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .fullscreen-bg {
+     
+    }
+  
+    .fullscreen-bg__video {
+      display: none;
+    }
+  }
+
+.headerFont{
+    font-family: "Lucida Sans Unicode";
+    font-size: 20px;
+    text-align: center;
+}
+</style>
+<!-- This is the code for the background video -->
+<div class="fullscreen-bg">
+    <video loop muted autoplay  class="fullscreen-bg__video">
+        <source src="spaceTravel.mp4" type="video/mp4">
+    </video>
+</div>
+<div>
+    <h1 style="text-align:center;margin-top:85px;font-family: Lucida Sans Unicode;font-size: 40px;color:white"> Help King Shan to find the falcon!!</h1>
+    <h2 style="margin-left:5%;font-family: Lucida Sans Unicode;font-size: 30px;color:white">Potential Hideouts:</h2>
+    <br>
+    <div style="display: inline-block;margin-left:8%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            {{planetsName[0]}} : <img src="donna.png">
+        </label>
+        <br>
+        <label style="color:#E5E4E2">Distance: {{planetsDistance[0]}} Megamiles</label>
+    </div>
+    <div style="display: inline-block;margin-left:2%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            {{planetsName[1]}} : <img src="mercury.png"> 
+        </label>
+        <br>
+        <label style="color:#E5E4E2">Distance {{planetsDistance[1]}} Megamiles</label>
+    </div>
+    <div style="display: inline-block;margin-left:2%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            {{planetsName[2]}} : <img src="moon.png"> 
+        </label>
+        <br>
+        <label style="color:#E5E4E2">Distance {{planetsDistance[2]}} Megamiles</label>
+    </div>
+    <div style="display: inline-block;margin-left:2%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            {{planetsName[3]}} : <img src="planet-earth.png"> 
+        </label>
+        <br>
+        <label style="color:#E5E4E2">Distance {{planetsDistance[3]}} Megamiles</label>
+    </div>
+    <div style="display: inline-block;margin-left:2%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            {{planetsName[4]}} : <img src="saturn.png"> 
+        </label>
+        <br>
+        <label style="color:#E5E4E2">Distance {{planetsDistance[4]}} Megamiles</label>
+    </div>
+    <div style="display: inline-block;margin-left:2%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            {{planetsName[5]}} : <img src="mars.png"> 
+        </label>
+        <br>
+        <label style="color:#E5E4E2">Distance {{planetsDistance[5]}} Megamiles</label>
+    </div>
+    <br>
+    <h2 style="margin-left:5%;font-family: Lucida Sans Unicode;font-size: 30px;color:white">Available Vechiles:</h2>
+    <br>
+    <div style="display: inline-block;margin-left:10%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            {{vechileName[0]}} : <img src="spacepod.png"> 
+        </label>
+        <br>
+        <label style="color:#E5E4E2">Units: {{vechileCount[0]}}</label>
+        <br>
+        <label style="color:#E5E4E2"> Max distance: {{vechileMaxDistance[0]}} Megamiles</label>
+        <br>
+        <label style="color:#E5E4E2"> Speed: {{vechileSpeed[0]}} Megamiles/hour</label> 
+    </div>
+    <div style="display: inline-block;margin-left:5%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            {{vechileName[1]}} : <img src="spacerocket.png"> 
+        </label>
+        <br>
+        <label style="color:#E5E4E2">Units: {{vechileCount[1]}}</label>
+        <br>
+        <label style="color:#E5E4E2"> Max distance: {{vechileMaxDistance[1]}} Megamiles</label>
+        <br>
+        <label style="color:#E5E4E2"> Speed: {{vechileSpeed[1]}} Megamiles/hour</label> 
+    </div>
+    <div style="display: inline-block;margin-left:5%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            {{vechileName[2]}} : <img src="spaceship.png"> 
+        </label>
+        <br>
+        <label style="color:#E5E4E2">Units: {{vechileCount[2]}}</label>
+        <br>
+        <label style="color:#E5E4E2"> Max distance: {{vechileMaxDistance[2]}} Megamiles</label>
+        <br>
+        <label style="color:#E5E4E2"> Speed: {{vechileSpeed[2]}} Megamiles/hour</label> 
+    </div>
+    <div style="display: inline-block;margin-left:5%;">
+        <label style="font-family: Lucida Sans Unicode;font-size: 20px;color:white">
+            {{vechileName[3]}} : <img src="spaceship (2).png"> 
+        </label>
+        <br>
+        <label style="color:#E5E4E2">Units: {{vechileCount[3]}}</label>
+        <br>
+        <label style="color:#E5E4E2"> Max distance: {{vechileMaxDistance[3]}} Megamiles</label>
+        <br>
+        <label style="color:#E5E4E2"> Speed: {{vechileSpeed[3]}} Megamiles/hour</label> 
+    </div>
+    <br>
+    <br>
+    <br>
+    <button class="btn btn-default" style="margin-left:45%" ng-click="openHome()">Lets Find!!</button>
+</div>
+
