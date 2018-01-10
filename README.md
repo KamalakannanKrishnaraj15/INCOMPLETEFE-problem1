@@ -17,4 +17,6 @@ Table of contents:
 
 2. Usage:
 
-	Once, pre-requisites are installed the application can be lanuched (optional: python server) using local server.
+	*) Once you clone or download this repo create a pages folder in your local IDE and paste the home.html, planets.html and result.html.
+	*)Once, pre-requisites are installed the application can be lanuched (optional: python server) using local server.
+	
