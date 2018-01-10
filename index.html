@@ -1,0 +1,95 @@
+<style>
+    .topnav ul{
+    border-bottom: 1px solid #999999;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #999999;
+    max-height: 70px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+     /* Set the font styles for the header */
+.headerFont{
+    font-family: "Lucida Sans Unicode";
+    font-size: 20px;
+    text-align: center;
+}
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+  }
+  
+  .fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  @media (min-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      height: 300%;
+      top: -100%;
+    }
+  }
+  
+  @media (max-aspect-ratio: 16/9) {
+    .fullscreen-bg__video {
+      width: 300%;
+      left: -100%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .fullscreen-bg {
+     
+    }
+  
+    .fullscreen-bg__video {
+      display: none;
+    }
+  }
+</style>
+
+<html ng-app="findingFalcon">
+    <head>
+        <!-- load angular via CDN -->
+        <script src="https://code.angularjs.org/1.5.0/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.0/angular-route.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.0/angular-animate.js"></script>
+        <script src="https://code.angularjs.org/1.5.0/angular-sanitize.js"></script>
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <!-- Multiselect dropdown angular-bootstrap -->
+        <script src="bower_components/angular-bootstrap-multiselect/dist/angular-bootstrap-multiselect.min.js"></script>
+        <!--load the script file-->
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div class="topnav">
+            <ul>
+                    <li> <h1 class="headerFont">Welcome to Finding Falcon Problem</h1> </li>
+            </ul>
+        </div>
+        
+        <base href="/">
+
+        
+            <!--This is to bind the partial templates to the current page-->
+            <div ng-view></div>
+        
+    </body>
+</html>
